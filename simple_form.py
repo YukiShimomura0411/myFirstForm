@@ -8,8 +8,12 @@ def index():
 
 @app.route('/procForm', methods=['POST'])
 def processPost():
-    msg = request.form['msg']
-    return render_template("result.html", message = msg)
+    a = request.form['msg2']
+    b = request.form['msg3']
+    a = int(a)
+    b = int(b)
+    c = a+b
+    return render_template("result.html", message = c)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=8000, debug = True)
